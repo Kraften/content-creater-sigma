@@ -1,0 +1,192 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow-x: clip;
+  .aaaq {
+    z-index: 999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .aaaabsolute {
+      position: absolute;
+      width: 100dvw;
+      height: 100dvh;
+      .close {
+        display: flex;
+        justify-content: end;
+        margin: 5rem;
+      }
+    }
+  }
+  .header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    p {
+      width: 50%;
+    }
+  }
+  .relative {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .linkedinPost {
+      position: relative;
+      border-radius: var(--card-border-radius);
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      display: grid;
+      max-width: 35%;
+      grid-template-rows: auto 1fr auto;
+      padding: 2rem;
+      margin: 2rem 0;
+
+      .postHeader {
+        grid-row: 1;
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+        .userInfo {
+          display: flex;
+          flex-direction: column;
+        }
+
+        .userName {
+          margin: 0;
+          font-weight: bold;
+        }
+
+        .userTitle,
+        .postTime {
+          color: #555;
+          font-size: 0.85em;
+        }
+        .profilePicture {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-right: 10px;
+        }
+      }
+      .postContent {
+        grid-row: 2;
+        display: grid;
+        grid-template-rows: auto 1fr;
+
+        .textSection {
+          .annotation {
+            width: fit-content;
+            position: absolute;
+          }
+
+          .annotation01 {
+            left: -280px;
+            top: 7%;
+          }
+          .annotation02 {
+            right: -291px;
+            top: 70%;
+          }
+
+          p {
+            margin-bottom: 1rem;
+            cursor: pointer;
+          }
+        }
+        .noImage {
+          cursor: pointer;
+          width: 100%;
+          grid-row: 2;
+          border-radius: var(--card-border-radius);
+          font-weight: 700;
+        }
+        .imageContainer {
+          cursor: pointer;
+          grid-row: 2;
+          border-radius: var(--card-border-radius);
+          font-weight: 700;
+          width: 100%;
+          overflow: hidden;
+
+          .postImage {
+            border-radius: var(--card-border-radius);
+            width: 100%;
+          }
+        }
+      }
+
+      .postFooter {
+        grid-row: 3;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+      }
+
+      .postAction {
+        background: none;
+        border: none;
+        color: #0073b1;
+        font-weight: bold;
+        cursor: pointer;
+        padding: 8px;
+        transition: background-color 0.2s ease;
+      }
+    }
+  }
+
+  .absolute {
+    position: absolute;
+    border-radius: var(--card-border-radius);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+  }
+
+  .scaleUp {
+    animation: scale 500ms ease-in-out forwards;
+  }
+
+  .fadeInButton {
+    animation: fadeIn 300ms ease-in-out forwards;
+  }
+
+  .border {
+    border: 1px solid black;
+  }
+
+  .boxShadow {
+    box-shadow: var(--selected-box-shadow);
+  }
+
+  @keyframes scale {
+    0% {
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
+
+.saveButton {
+  background-color: var(--primary-green);
+  border-radius: var(--card-border-radius);
+  border: none;
+  color: white;
+  padding: 1rem;
+}

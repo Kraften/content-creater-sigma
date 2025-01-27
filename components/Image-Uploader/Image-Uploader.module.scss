@@ -1,0 +1,39 @@
+.imageUploadComponent {
+  display: grid;
+  grid-template-rows: auto;
+
+  .fileInput {
+    grid-row: 2;
+    margin: 10px 0;
+    display: inline-block;
+  }
+
+  .outputContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+
+    .uploadedImage {
+      border-radius: 7px;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .buttonRow {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-top: 1rem;
+    .saveButton {
+      border-radius: 25px;
+      cursor: pointer;
+      transform: scale(2);
+      color: var(--primary-green);
+    }
+  }
+
+  .saveButton:hover {
+    color: var(--hover-green);
+  }
+}

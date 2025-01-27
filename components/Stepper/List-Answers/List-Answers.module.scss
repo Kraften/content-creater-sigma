@@ -1,0 +1,18 @@
+.list {
+  height: 100%;
+  .listItem {
+    cursor: pointer;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    border-radius: var(--card-border-radius);
+    padding: 7px;
+    list-style: none;
+    .liHeader {
+      font-weight: 700;
+      font-size: 1.3em;
+    }
+    .liBulletPoint {
+      font-size: 1.2em;
+    }
+  }
+}

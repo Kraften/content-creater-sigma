@@ -1,0 +1,29 @@
+.textInput {
+  padding: 1.2rem;
+  width: 100%;
+  font-size: 1rem;
+  font-family: Arial;
+  line-height: 1.5;
+  margin-top: 1rem;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+.buttonRow {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin: 1rem 0 1rem 1rem;
+  .saveButton {
+    border-radius: 25px;
+    cursor: pointer;
+    transform: scale(2);
+    color: var(--primary-green);
+  }
+}
+
+.saveButton:hover {
+  color: var(--hover-green);
+}

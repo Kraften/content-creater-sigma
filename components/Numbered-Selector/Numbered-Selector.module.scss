@@ -1,0 +1,55 @@
+.numberedSelector {
+  position: relative;
+
+  .numberWrapper {
+    display: flex;
+
+    .number {
+      font-family: var(--font-geist-mono);
+      padding: 0px 10px;
+      margin: 0 6px;
+      font-size: 70px;
+      transition: all 0.1s ease-in;
+      text-decoration: underline;
+      cursor: pointer;
+
+      &.selected {
+        background-color: #f4f4f4;
+        border-radius: var(--card-border-radius);
+      }
+
+      &:hover {
+        background-color: #f4f4f4;
+        border-radius: var(--card-border-radius);
+      }
+    }
+    .selections {
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .line {
+      display: flex;
+      align-items: end;
+    }
+
+    .flipLine {
+      transform: scaleX(-1) translateY(-24px);
+    }
+    .transform {
+      transform: translateY(-30px);
+    }
+  }
+
+  .text {
+    padding: 0px 11px;
+    margin: 0 6px;
+    cursor: pointer;
+    img {
+      width: 80px;
+    }
+  }
+}

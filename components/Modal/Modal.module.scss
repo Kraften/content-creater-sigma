@@ -1,0 +1,49 @@
+.modal {
+  position: absolute;
+  padding: 1rem;
+  box-shadow: var(--selected-box-shadow);
+  border-radius: var(--card-border-radius);
+  background-color: white;
+  width: 100%;
+  top: 30px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    p {
+      padding: 1rem;
+    }
+  }
+  .close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: 1rem 0;
+    h2 {
+      flex-grow: 1;
+      text-align: center;
+    }
+    .x {
+      font-size: 1.5rem;
+      margin-left: auto;
+      cursor: pointer;
+      position: absolute;
+      right: 0;
+    }
+  }
+}
+
+.scaleUp {
+  animation: scale 500ms ease-in-out forwards;
+}
+
+@keyframes scale {
+  0% {
+  }
+  100% {
+    transform: scale(1.1);
+  }
+}

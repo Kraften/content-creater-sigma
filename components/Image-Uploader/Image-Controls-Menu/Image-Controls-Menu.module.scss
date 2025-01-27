@@ -1,0 +1,126 @@
+.imageControls {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 1rem;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1rem 0 2rem 0;
+
+  .menuItem {
+    display: grid;
+    grid-template-rows: 1fr 3fr;
+    &:nth-child(1) {
+      border-right: 1px solid black;
+    }
+    &:nth-child(2) {
+      border-right: 1px solid black;
+    }
+  }
+  .top {
+    display: flex;
+    flex-direction: row;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    grid-row: 1;
+    p {
+      font-size: 12px;
+    }
+    .circle {
+      border-radius: 25px;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      background-color: rgb(94, 94, 94);
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      color: white;
+      margin-right: 1rem;
+      flex-shrink: 0;
+    }
+  }
+
+  .imageUpload {
+    margin-top: 2rem;
+    grid-row: 2;
+
+    .relative {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      .absolute {
+        position: absolute;
+      }
+      .image {
+        cursor: pointer;
+        width: 140px;
+      }
+      .plusButton {
+        position: absolute;
+        left: 44px;
+        top: 30px;
+        font-size: 12px;
+        width: 53px;
+        height: 27px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        cursor: pointer;
+        color: white;
+        background-color: var(--primary-green);
+      }
+    }
+  }
+  .logoControls {
+    margin-top: 2rem;
+    grid-row: 2;
+    display: flex;
+    justify-content: center;
+
+    height: 100%;
+    label {
+      margin-bottom: 0.4rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+    }
+    .logoPicker {
+      img {
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+  .colorControls {
+    margin-top: 2rem;
+
+    display: flex;
+    justify-content: center;
+    grid-row: 2;
+    height: 100%;
+
+    .box {
+      width: 50px;
+      height: 50px;
+      border-radius: 7px;
+      padding: 1rem;
+      margin-right: 1rem;
+      border: 1px solid black;
+      cursor: pointer;
+      &.black {
+        margin-top: 1rem;
+        background-color: black;
+      }
+      &.white {
+        margin-top: 1rem;
+        background-color: white;
+      }
+      &.selected {
+        border: 2px solid white;
+        box-shadow: 0 0 0 2px var(--primary-green);
+      }
+    }
+  }
+}

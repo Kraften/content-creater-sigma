@@ -1,0 +1,17 @@
+.questionWrapper {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  .input {
+    font-size: 30em;
+  }
+
+  span {
+    color: red;
+    margin-top: 1rem;
+  }
+}

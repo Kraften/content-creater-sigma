@@ -1,0 +1,123 @@
+.stepper {
+  display: grid;
+  max-height: 800px;
+  min-width: 550px;
+  grid-template-rows: auto 1fr auto;
+  .introText {
+    display: flex;
+    justify-content: center;
+  }
+  .stepsRowWrapper {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    .stepsRow {
+      display: grid;
+      grid-column: 2;
+      grid-template-columns: repeat(3, auto);
+
+      li {
+        margin: 1rem 0;
+        display: grid;
+        grid-template-columns: repeat(2, auto);
+
+        .circleWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          grid-column: 1;
+
+          .circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 25px;
+            background-color: var(--disabled-grey);
+          }
+
+          .activeCircle {
+            width: 30px;
+            height: 30px;
+            border-radius: 25px;
+            box-shadow: 0 0 0 3px #fff, 0 0 0 5px #27ae60, 0 0 0 17px #fff,
+              0 0 0 16px #27ae60;
+            background-color: var(--primary-green);
+          }
+        }
+        .lineWrapper {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          grid-column: 2;
+          z-index: 1;
+
+          .line {
+            width: 60px;
+            height: 3px;
+            background: lightgrey;
+          }
+        }
+      }
+      li:last-child {
+        display: grid;
+        grid-template-columns: repeat(1, 45px);
+
+        .circleWrapper {
+          grid-row: 1;
+        }
+        .lineWrapper {
+          z-index: 1;
+          grid-row: 2;
+        }
+      }
+      .titleWrapper {
+        z-index: 1;
+        margin-top: 0.5rem;
+        justify-content: center;
+        display: flex;
+        white-space: nowrap;
+      }
+      .circleLineRow {
+        display: flex;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.contentsRow {
+  position: relative;
+  overflow: auto;
+
+  ul {
+    padding: 0rem 2rem;
+  }
+}
+.buttonsRow {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-right: 2rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-top: 5px solid var(--primary-green);
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 50%;
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
