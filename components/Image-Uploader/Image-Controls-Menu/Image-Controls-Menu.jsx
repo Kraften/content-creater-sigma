@@ -1,14 +1,14 @@
 import { useRef, useState, useEffect } from "react";
 import styles from "./Image-Controls-Menu.module.scss";
-import Image from "next/image";
-import placeholderImage from "../../../public/placeholder.svg";
 
+import placeholderImage from "../../../public/placeholder.svg";
 import postStore from "./../../../store/postStore";
 import sigmaBlackLogo from "../../../public/SC-logo_BLACK.png";
 import sigmaWhiteLogo from "../../../public/SC-logo_WHITE.png";
 import sigmaEngBlackLogo from "../../../public/190425_Engineering_by_SC_tag_BLACK.png";
 import sigmaEngWhiteLogo from "../../../public/190425_Engineering_by_SC_tag_WHITE.png";
 import { PropTypes } from "prop-types";
+import Image from "next/image";
 
 export const LOGOS = {
   sigmaLogo: {
@@ -58,8 +58,8 @@ const ImageControlsMenu = ({ onLogoChange }) => {
     return <div className={styles.circle}>{number}</div>;
   };
 
-  const CircleButton = ({ char }) => {
-    return <div className={styles.plusButton}>{char}</div>;
+  const AddPhotoButton = ({ char }) => {
+    return <div className={styles.addButton}>{char}</div>;
   };
 
   const menuItem = (item) => {
@@ -75,11 +75,12 @@ const ImageControlsMenu = ({ onLogoChange }) => {
               <div className={styles.relative}>
                 <div className={styles.absolute}>
                   <div onClick={onButtonClick}>
-                    <CircleButton char={"Add"}></CircleButton>
+                    <AddPhotoButton char={"Add"}></AddPhotoButton>
                   </div>
                   <Image
+                    fill
                     src={placeholderImage}
-                    alt=""
+                    alt="alt"
                     onClick={onButtonClick}
                     className={styles.image}
                   />
@@ -112,7 +113,8 @@ const ImageControlsMenu = ({ onLogoChange }) => {
                     onChange={() => setSelectedLogo("sigmaEngLogo")}
                   />
                   <Image
-                    width={"100px"}
+                    alt="alt"
+                    fill
                     src={sigmaEngBlackLogo}
                     onClick={() => setSelectedLogo("sigmaEngLogo")}
                   />
@@ -125,7 +127,8 @@ const ImageControlsMenu = ({ onLogoChange }) => {
                     onChange={() => setSelectedLogo("sigmaLogo")}
                   />
                   <Image
-                    width={"100px"}
+                    alt="alt"
+                    fill
                     src={sigmaBlackLogo}
                     onClick={() => setSelectedLogo("sigmaLogo")}
                   />

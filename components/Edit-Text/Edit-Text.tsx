@@ -8,7 +8,12 @@ import userStore from "../../store/userStore";
 import { SECTION } from "../../constants/constants";
 import { EDIT_SECTION } from "../../constants/constants";
 
-const EditTextComponent = ({ text, section }) => {
+interface Props {
+  text: string;
+  section: string;
+}
+
+const EditTextComponent = ({ text, section }: Props) => {
   const { updateIntroText, updateMainText } = postStore();
   const { updateSelectedStep, updateSelectedEditSection } = userStore();
 
@@ -17,7 +22,7 @@ const EditTextComponent = ({ text, section }) => {
     updateSelectedStep(SECTION.NONE);
   };
 
-  const handleTextChange = (e) => {
+  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (section === EDIT_SECTION.INTRO_TEXT) updateIntroText(e.target.value);
     else if (section === EDIT_SECTION.MAIN_TEXT) updateMainText(e.target.value);
   };
@@ -25,11 +30,6 @@ const EditTextComponent = ({ text, section }) => {
   return (
     <>
       <TextareaAutosize
-        sx={{
-          "&:focus": {
-            outline: "none",
-          },
-        }}
         id="outlined-adornment-password"
         onChange={(e) => handleTextChange(e)}
         className={styles.textInput}

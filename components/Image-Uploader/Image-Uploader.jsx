@@ -8,10 +8,10 @@ import { DndContext } from "@dnd-kit/core";
 import DraggableLogo from "./Draggable-Logo/Draggable-Logo";
 import IconButton from "@mui/material/IconButton";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-import placeholderImage from "../../public/placeholder.svg";
+import placeholderImage from "./../../public/placeholder.svg";
 import ImageControlsMenu, {
   LOGOS,
-} from "./Image-Controls-Menu/Image-Controls-Menu.jsx";
+} from "./Image-Controls-Menu/Image-Controls-menu.jsx";
 import userStore from "../../store/userStore.js";
 import Image from "next/image";
 
@@ -19,14 +19,20 @@ const ImageUploaderComponent = () => {
   const [logoPosition, setLogoPosition] = useState({ top: 50, left: 50 });
   const [selectedLogo, setSelectedLogo] = useState("sigmaEngLogo");
   const [logoColor, setLogoColor] = useState(true);
-  const { image, updateEditedImage } = postStore();
+  const { image, updateEditedImage, updateImage } = postStore();
   const { updateSelectedStep } = userStore();
 
   const saveImageToState = () => {
-    const element = document.getElementById("output-container");
-    html2canvas(element, { useCORS: true, scale: 2 }).then((canvas) => {
+    const editedImage = document.getElementById("output-container");
+    const image = document.getElementById("image-container");
+
+    html2canvas(editedImage, { useCORS: true, scale: 2 }).then((canvas) => {
       const dataURL = canvas.toDataURL("image/png");
       updateEditedImage(dataURL);
+    });
+    html2canvas(image, { useCORS: true, scale: 2 }).then((canvas) => {
+      const dataURL = canvas.toDataURL("image/png");
+      updateImage(dataURL);
     });
 
     handleCloseModal();
@@ -63,7 +69,8 @@ const ImageUploaderComponent = () => {
           modifiers={[restrictToParentElement]}
         >
           <div id="output-container" className={styles.outputContainer}>
-            <Image
+            <img
+              id="image-container"
               className={styles.uploadedImage}
               src={image}
               alt="Background"
@@ -77,7 +84,12 @@ const ImageUploaderComponent = () => {
         </DndContext>
       ) : (
         <div className={styles.outputContainer}>
-          <Image src={placeholderImage}></Image>
+          <Image
+            className={styles.placeholderImage}
+            fill
+            alt="Placeholder"
+            src={placeholderImage}
+          ></Image>
         </div>
       )}
       {image && (
