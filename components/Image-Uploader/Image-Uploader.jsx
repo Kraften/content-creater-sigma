@@ -11,7 +11,7 @@ import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import placeholderImage from "./../../public/placeholder.svg";
 import ImageControlsMenu, {
   LOGOS,
-} from "./Image-Controls-Menu/Image-Controls-menu.jsx";
+} from "./Image-Controls-Menu/Image-Controls-Menu.jsx";
 import userStore from "../../store/userStore.js";
 import Image from "next/image";
 
