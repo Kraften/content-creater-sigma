@@ -2,7 +2,7 @@ import styles from "./numbered-selector.module.scss";
 import PropTypes from "prop-types";
 import iconText from "../../public/PS_Icon_Text.svg";
 import iconImg from "../../public/PS_Icon_Img.svg";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono } from "next/font/google";
 import Image from "next/image";
 
 const geistMono = Geist_Mono({
