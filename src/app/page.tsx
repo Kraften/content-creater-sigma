@@ -6,7 +6,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import placeholderImage from "../../public/placeholder.svg";
 import ModalComponent from "./../../components/Modal/Modal";
 import StepperComponent from "./../../components/Stepper/Stepper";
-import ImageUploaderComponent from "./../../components/Image-Uploader/Image-Uploader.tsx";
 import { EDIT_SECTION, SECTION } from "../../constants/constants";
 import postStore from "../../store/postStore";
 import userStore from "../../store/userStore";
@@ -14,6 +13,7 @@ import EditTextComponent from "./../../components/Edit-Text/Edit-Text";
 import Image from "next/image";
 import { capitalizeFirstLetter } from "../../utils/utils";
 import NumberedSelector from "./../../components/Numbered-Selector/Numbered-selector";
+import ImageUploaderComponent from "./../../components/Image-Uploader/Image-Uploader";
 
 const LinkedInPostPage = () => {
   const { editedImage, mainText, introText, isHelpOpen, updateIsHelpOpen } =

@@ -1,4 +1,4 @@
-import styles from "./numbered-selector.module.scss";
+import styles from "./Numbered-Selector.module.scss";
 import PropTypes from "prop-types";
 import iconText from "../../public/PS_Icon_Text.svg";
 import iconImg from "../../public/PS_Icon_Img.svg";
