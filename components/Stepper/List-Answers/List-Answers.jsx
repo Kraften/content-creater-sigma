@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { PropTypes } from "prop-types";
 
-import styles from "./list-answers.module.scss";
+import styles from "./List-Answers.module.scss";
 import postStore from "../../../store/postStore";
 
 const ListAnswers = ({ passSelectedItems }) => {
