@@ -1,13 +1,11 @@
 import { useState } from "react";
-import { PropTypes } from "prop-types";
 
 import styles from "./List-Answers.module.scss";
 import postStore from "../../../store/postStore";
 
-const ListAnswers = ({ passSelectedItems }) => {
+const ListAnswers = () => {
   const [selectedItems, setSelectedItems] = useState([]);
-  const { listOfPerks, updateSelectedPerksList, selectedPerksList } =
-    postStore();
+  const { listOfPerks, updateSelectedPerksList } = postStore();
 
   const handleSelectItem = (item) => {
     const isSelected = selectedItems.some(
@@ -54,7 +52,3 @@ const ListAnswers = ({ passSelectedItems }) => {
 };
 
 export default ListAnswers;
-
-ListAnswers.propTypes = {
-  passSelectedPerksToParent: PropTypes.func,
-};

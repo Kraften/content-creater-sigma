@@ -14,6 +14,7 @@ import Image from "next/image";
 import { capitalizeFirstLetter } from "../../utils/utils";
 import NumberedSelector from "./../../components/Numbered-Selector/Numbered-selector";
 import ImageUploaderComponent from "./../../components/Image-Uploader/Image-Uploader";
+import { STEPS } from "./../../constants/constants";
 
 const LinkedInPostPage = () => {
   const { editedImage, mainText, introText, isHelpOpen, updateIsHelpOpen } =
@@ -43,7 +44,7 @@ const LinkedInPostPage = () => {
     updateSelectedEditSection(EDIT_SECTION.IMAGE);
   };
 
-  const handleSelectionFromChild = (section) => {
+  const handleSelectionFromChild = (section: typeof STEPS) => {
     updateSelectedStep(section);
   };
 
