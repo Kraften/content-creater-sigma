@@ -22,7 +22,7 @@ const EditTextComponent = ({ text, section }: Props) => {
     updateSelectedStep(SECTION.NONE);
   };
 
-  const handleTextChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleTextChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (section === EDIT_SECTION.INTRO_TEXT) updateIntroText(e.target.value);
     else if (section === EDIT_SECTION.MAIN_TEXT) updateMainText(e.target.value);
   };
